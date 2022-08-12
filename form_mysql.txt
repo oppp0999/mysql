@@ -1,0 +1,34 @@
+mysql
+
+1. npm install --save mysql
+package.json에 mysql을 설치하여 패키지 관리해준다.
+
+ "mysql": "^2.18.1",이 추가된 것을 확인할 수 있다.
+
+introduction 을 통해서 현재 컬럼을 반환시킨다. 즉 확인이고 변수로 사용하게 기본 사용법이다.
+mysql.js 를 실행시켜본다.
+
+오류는 2번에서 해결
+
+2. create user mysql -> SELECT Host,User,Plugin FROM mysql.user; 확인
+2.1 유저 생성 -> CREATE USER 'nodejs'@'%' IDENTIFIED BY '11111111';
+2.2 권한을 부여 ->  GRANT ALL PRIVILEGES ON opentutorials.* TO 'nodejs'@'%';
+2.3 권한 반영 -> FLUSH PRIVILEGES;
+
+
+3. 홈페이지 구현 main.js 에서 홈표시를 하고있던 부분을 담겨있던 데이터베이스의 쿼리값을 표현하기위해서 코드를 수정
+log를 통해서 알 수 있는데 [] 대괄호로 시작되는 부분은 객체로 여러가지 프로퍼티 값이 세팅 되어 전달되는 것을 알 수 있다.
+
+나타난 값을 이용해서 웹페이지를 생성하면된다.
+각 템플릿에서 사용되는 부분을 토픽으로 변수를 조정하고 템플릿함수에서 topic의 title을 사용하기 위해
+topics[i] -> topics[i].title로 변경
+
+눌렀을 때 이동되는 페이지 소스는 id값으로 변경하여 주소를 리로딩해준다.
+topics[i] -> topics[i].id
+
+
+4. 상세보기 구현
+쿼리를 이용해서 topics 에 있는 내용들을 topic으로 다시 객체화 시켜서 각 topic의 값을 제목과 본문을 뽑아낸다.
+
+쿼리값 보안을 위해서 id=?`,[queryData.id],
+인자를 하나 추가하여 의도가 있는 코드를 세탁하여 처리한다.

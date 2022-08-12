@@ -1,7 +1,8 @@
 --
 -- Table structure for table `author`
 --
- 
+ -- CREATE DATABASE opentutorials;
+ -- USE opentutorials;
  
 CREATE TABLE `author` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
