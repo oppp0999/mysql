@@ -59,3 +59,26 @@ WHERE id=? 이부분이 중요하다 넣지않으면 모든 값이 바뀐다.
 where 부분 무조건 적기
 
 DELETE FROM topic WHERE id. = ?
+
+
+8. 글의 저자 표시 
+
+`SELECT * FROM topic LEFT JOIN author ON topic.author_id=author.id WHERE topic.id=?`
+
+topic[0].name을 이용한다.
+
+9. update에서 현재의 값을 전달하여 콤보박스가 미리 선택되게한다.
+
+while(i < authors.length){
+      var selected = '';
+      if(authors[i].id == author_id){
+        selected = 'selected';
+      }
+
+      tag += `<option value="${authors[i].id}"${selected}>${authors[i].name}</option>`;
+     
+
+${template.authorSelect(authors, topic[0].author_id)}
+선택되어있는 값으로 나타낸다.
+
+
