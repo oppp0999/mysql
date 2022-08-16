@@ -1,19 +1,8 @@
 var http = require('http');
-var fs = require('fs');
 var url = require('url');
 var qs = require('querystring');
 var template = require('./lib/template.js'); //함수
-var path = require('path');
-var sanitizeHtml = require('sanitize-html');
-var mysql = require('mysql');
-var db = mysql.createConnection({
-  host:'localhost',
-  user:'nodejs',
-  password:'11111111',
-  database:'opentutorials'
-});//connection의 값을 담고있다.
-db.connect();
-
+var db = require('./lib/db');
 
 var app = http.createServer(function(request,response){
     var _url = request.url;
