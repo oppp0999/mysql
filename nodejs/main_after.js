@@ -13,7 +13,7 @@ var app = http.createServer(function(request,response){
       if(queryData.id === undefined){
        topic.home(request,response);
       } else {
-        topic.page(request,response);      
+        topic.page(request,response);
       }
     } else if(pathname === '/create'){
       topic.create(request,response);
