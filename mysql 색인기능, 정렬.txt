@@ -1,0 +1,11 @@
+색인기능
+index -> insert는 느리지만 검색할 때 , 꺼낼 때 속도가 빠름
+
+정렬
+order
+select * from topic order by id desc
+
+page기능
+LIMIT
+sql 속도를 위해서
+select * from topic LIMIT 0 OFFSET 20으로
